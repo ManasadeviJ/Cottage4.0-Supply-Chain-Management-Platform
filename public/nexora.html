@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NEXORA25 Futuristic Tech Expo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #0d0d18 70%, #fd158b 100%);
+            color: #fafafa;
+            font-family: 'Orbitron', Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        header {
+            position: relative;
+            padding: 3rem 1rem 6rem 1rem;
+            text-align: center;
+        }
+        .expo-title {
+            font-size: 2.5rem;
+            letter-spacing: 0.1em;
+            color: #fd158b;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 40px #fd158b80;
+        }
+        .college {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+        .countdown {
+            font-size: 1.4rem;
+            background: #10101a;
+            border: 2px solid #fd158b;
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 1em;
+            margin-top: 1.5rem;
+            box-shadow: 0 0 30px #fd158b50;
+            font-weight: bold;
+        }
+        .animated-cube {
+            width: 100px;
+            height: 100px;
+            margin: 2em auto 0;
+            perspective: 400px;
+        }
+        .cube {
+            width: 100px; height: 100px; position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 3s infinite linear;
+        }
+        .cube-face {
+            position: absolute;
+            width: 100px; height: 100px;
+            opacity: 0.85;
+            background: #fd158b;
+            border: 2px solid #fff;
+        }
+        .cube-face.front  { transform: translateZ(50px);}
+        .cube-face.back   { transform: rotateY(180deg) translateZ(50px);}
+        .cube-face.right  { transform: rotateY(90deg) translateZ(50px);}
+        .cube-face.left   { transform: rotateY(-90deg) translateZ(50px);}
+        .cube-face.top    { transform: rotateX(90deg) translateZ(50px);}
+        .cube-face.bottom { transform: rotateX(-90deg) translateZ(50px);}
+        @keyframes rotateCube {
+            from {transform: rotateX(0deg) rotateY(0deg);}
+            to {transform: rotateX(360deg) rotateY(360deg);}
+        }
+        section {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2rem 2rem;
+            background: rgba(16,16,28,0.7);
+            border-radius: 1.5em;
+            box-shadow: 0 0 20px #fd158b30;
+        }
+        section h2 {
+            color: #fd158b;
+            border-bottom: 1px solid #fd158b70;
+            padding-bottom: 0.5em;
+        }
+        ul.events {
+            list-style-position: inside;
+            font-size: 1.1rem;
+            margin-top: 1em;
+        }
+        ul.events li {
+            margin-bottom: 1em;
+            background: #231233ee;
+            border-left: 5px solid #fd158b;
+            padding: 1em;
+            border-radius: 0.5em;
+            transition: transform 0.2s;
+        }
+        ul.events li:hover {
+            transform: scale(1.03);
+            background: #fd158b33;
+        }
+        .register-btn {
+            background: #fd158b;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            border-radius: 0.5em;
+            padding: 1em 2em;
+            cursor: pointer;
+            margin: 2em auto;
+            display: block;
+            box-shadow: 0 0 12px #fd158b50;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .register-btn:hover {
+            background: #c80b69;
+            transform: scale(1.04);
+        }
+        footer {
+            text-align: center;
+            color: #fd158b;
+            font-size: 1rem;
+            padding: 2rem 0 1rem 0;
+            opacity: 0.7;
+            letter-spacing: 0.06em;
+        }
+        @media (max-width: 600px) {
+            section, header {
+                padding: 1rem;
+            }
+            .expo-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="expo-title">NEXORA25 Futuristic Tech Expo</div>
+        <div class="college">
+            A National Level Technical Symposium<br>
+            Organized by Adhiyamaan College of Engineering, Hosur<br>
+            14th October 2025, 9:00 AM onwards
+        </div>
+        <div class="countdown" id="countdown"></div>
+        <div class="animated-cube">
+            <div class="cube">
+                <div class="cube-face front"></div>
+                <div class="cube-face back"></div>
+                <div class="cube-face right"></div>
+                <div class="cube-face left"></div>
+                <div class="cube-face top"></div>
+                <div class="cube-face bottom"></div>
+            </div>
+        </div>
+    </header>
+    
+    <section>
+        <h2>About the Tech Expo</h2>
+        <p>
+        NEXORA25 brings future technology to the present—an immersive technical symposium for visionaries, innovators, and tech enthusiasts. Experience hands-on competitions, networking, and the spirit of engineering excellence backed by ISTE and Adhiyamaan College of Engineering [file:1].
+        </p>
+    </section>
+
+    <section>
+        <h2>Main Events & Competitions</h2>
+        <ul class="events">
+            <li>
+                <strong>PIXEL PITCH (Poster Making)</strong><br>
+                • Team up to 3 members.<br>
+                • Topic: Cyber Security Awareness.<br>
+                • 1-page poster, present in 5 minutes.<br>
+                • Submission by Oct 10, 2025.<br>
+            </li>
+            <li>
+                <strong>QUIZTEONICS (Tech Quiz)</strong><br>
+                • Individual event.<br>
+                • 2 rounds, 45 questions.<br>
+                • Fast-paced rapid-fire finals.<br>
+            </li>
+            <li>
+                <strong>QUANTUMFIX (Debugging)</strong><br>
+                • Individual event.<br>
+                • Code or circuit debugging.<br>
+                • Complete within 30 minutes.<br>
+            </li>
+            <li>
+                <strong>FUTURE FRAME (Paper Presentation)</strong><br>
+                • Up to 3 members per team.<br>
+                • Abstract & PPT submission: Oct 6 & 10.<br>
+                • Presentation: 6 minutes, Q&A: 2 minutes.<br>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Registration & Important Dates</h2>
+        <ul>
+            <li>Registration Fee: ₹200 per person.</li>
+            <li>Registration Last Date: 6th October 2025.</li>
+            <li>Event Day: 14th October 2025, 9:00 AM.</li>
+            <li>Abstract Submission: 6th October 2025.</li>
+            <li>PPT/Poster Submission: 10th October 2025.</li>
+        </ul>
+        <button class="register-btn" onclick="window.location.href='https://forms.gle/DEVuQQqnBmK8Cc5d8'">Register Now</button>
+    </section>
+
+    <section>
+        <h2>Contact & Support</h2>
+        <ul>
+            <li>Email: iste.studentchapter15@gmail.com</li>
+            <li>Phone: 63853 58009 | 93450 53723</li>
+            <li>Faculty Advisor: Prof. M. Sukanya (ISTE Students Chapter, ACE, Hosur)</li>
+        </ul>
+    </section>
+
+    <footer>
+        © 2025 NEXORA25 Tech Expo • Adhiyamaan College of Engineering • Designed by the ISTE Students Chapter
+    </footer>
+    
+    <!-- 3D Countdown & Animation JS -->
+    <script>
+        // Countdown logic
+        function countdownTimer() {
+            const eventDate = new Date('2025-10-14T09:00:00+05:30').getTime();
+            const cd = document.getElementById('countdown');
+            function updateTimer() {
+                const now = new Date().getTime();
+                let diff = eventDate - now;
+                if (diff < 0) {
+                    cd.textContent = "The event is live!";
+                    return;
+                }
+                let days = Math.floor(diff / (1000*60*60*24));
+                let hrs = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+                let mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+                let secs = Math.floor((diff % (1000*60)) / 1000);
+                cd.textContent = `Countdown: ${days}d ${hrs}h ${mins}m ${secs}s`;
+                requestAnimationFrame(updateTimer);
+            }
+            updateTimer();
+        }
+        countdownTimer();
+        // Cube animation handled via CSS keyframes (see above)
+    </script>
+</body>
+</html>

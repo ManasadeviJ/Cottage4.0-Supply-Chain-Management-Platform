@@ -1,0 +1,142 @@
+FCertainly! Below is a detailed list of all the key pages needed for the Cottage 4.0 web application, along with the essential UI elements and components that should be included on each page based on your project requirements and UI documentation.
+
+***
+
+# Cottage 4.0 — Key Pages & Their UI Elements
+
+***
+
+## 1. Registration & Onboarding Pages
+**Purpose:** Enable new users (farmers, processing cottagers, finished product cottagers, buyers) to register with role-specific information.
+
+### Elements:
+- Multi-step wizard with progress bar
+- Role selection dropdown (Farmer, Processing Cottager, Finished Product Cottager, Buyer)
+- Input fields: name, email, phone, address, business details (depending on role)
+- File upload: KYC docs, ID, land documents, business registrations, photos
+- OTP verification inputs (phone & email)
+- Buttons: Save & Continue, Back, Edit
+- Validation messages and tooltips
+- Terms and privacy policy checkbox
+- Optional biometric selfie capture (camera integration)
+- Captcha for bot prevention
+
+***
+
+## 2. Login Page
+**Purpose:** User authentication.
+
+### Elements:
+- Email or phone input
+- Password input with show/hide toggle
+- Login button (primary)
+- Links: Forgot Password, Register
+- OAuth social login options (Google)
+- Role selector or switcher
+- Error message display for invalid login
+
+***
+
+## 3. Farmer Dashboard & Auction Management
+**Purpose:** Farmers manage auctions, view bids, upload documents, and track sales.
+
+### Elements:
+- Navigation bar (logo, search, notifications, profile dropdown)
+- Sidebar navigation (Auctions, Profile, Analytics, Documents)
+- Summary cards: upcoming/live/past auctions count
+- “Create Auction” button
+- Auction list/grid with filtering (by status, produce, date)
+- Auction cards: produce name, quantity, reserve price, bid count, images, auction timing
+- Auction detail modal: bids, bidders list, analytics, edit options
+- Analytics charts (bid volume, average prices)
+- KYC/land document upload & status section
+- Notifications dropdown
+
+***
+
+## 4. Processing / Finished Product Cottager Dashboard
+**Purpose:** Manage product listings/orders and analyze sales.
+
+### Elements:
+- Sidebar navigation (Products, Orders, Profile, Reports)
+- Product listing table with thumbnails, price, stock, category, status badge
+- “Add New Product” modal/form (images, price, category, description)
+- Orders tab with filtering by status (pending, shipped, returned)
+- Sales KPIs and graphs (total sales, revenue trends)
+- Customer support/chat button
+- Notifications panel
+
+***
+
+## 5. Buyer Marketplace / Homepage
+**Purpose:** Explore and buy products, join auctions.
+
+### Elements:
+- Search bar with toggleable filter panel
+- Filters: category, location, seller type, price, ratings
+- Product/auction cards with image, name, price/current bid, seller info
+- Countdown timer for auctions
+- Buttons: Place Bid, Buy Now, Add to Wishlist
+- Product quick view modal (gallery, description, specs, ratings, bid history)
+- Categories section (icons/images for quick access)
+- Featured products carousel
+- Floating “My Cart” button with badge count
+
+***
+
+## 6. Live Auction Page
+**Purpose:** Participate in and watch live auctions.
+
+### Elements:
+- Real-time live bid feed (usernames, timestamps)
+- Countdown timer with sniping extension indicator
+- Input box for bids (with minimum increment prompt)
+- Proxy bid setup modal
+- Highlight current highest bid and bidder
+- Auction rules sidebar (FAQs, guidelines)
+- Notifications area (outbid alerts, auction ending soon)
+- Contract download link after auction ends
+
+***
+
+## 7. Orders & Checkout Pages
+**Purpose:** Facilitate buyer purchases and order tracking.
+
+### Elements:
+- Cart summary with items, quantities, prices, totals
+- Editable shipping address form (autofill, validation)
+- Payment method selector (wallet, UPI, card)
+- Order confirmation details (delivery estimate)
+- Order history with status filters (pending, shipped, delivered, returned)
+- Returns/refund request form with status tracking
+
+***
+
+## 8. Admin Dashboard
+**Purpose:** Manage users, auctions, orders, and system analytics.
+
+### Elements:
+- User management table with filters (role, approval status)
+- KYC/Document approval panel (preview & approve/reject buttons)
+- Auction control center (view all auctions, pause, cancel, contract management)
+- Order oversight with dispute and complaint handling
+- Analytics dashboard (user & sales charts, active auctions)
+- Notifications center for system alerts
+- Settings page for roles, permissions, and notification preferences
+
+***
+
+## 9. Common UI Components (Used Across Pages)
+- Responsive header (logo, navigation menu)
+- User profile dropdown (settings, logout)
+- Notification bell with alerts dropdown
+- Footer (about, privacy, contact, help)
+- Loading spinners & skeleton placeholders for async data
+- Mobile-friendly hamburger menu for navigation
+- Standardized buttons and form input controls with consistent styling
+
+***
+
+This page-to-element mapping can serve as the development roadmap and design spec foundation for your team, ensuring no critical UI or feature components are missed.
+
+If you want this as a formatted document or spreadsheet, that can also be prepared.

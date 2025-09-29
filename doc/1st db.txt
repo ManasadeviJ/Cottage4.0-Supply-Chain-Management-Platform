@@ -1,0 +1,66 @@
+Here is a comprehensive guide for **database modeling** of the Cottage 4.0 marketplace project according to your steps:
+
+***
+
+# Database Modeling for Cottage 4.0
+
+***
+
+## 1. Purpose of this Project
+Build a **role-based hybrid agricultural marketplace** where:
+- Farmers auction their raw produce.
+- Processing and finished product cottagers sell goods directly.
+- Buyers participate in auctions or direct purchases.
+- Admin manages the platform users, auctions, orders, and compliance.
+The DB must support real-time bidding, user management, KYC, contracts, orders, and analytics with secure, scalable structure.
+
+***
+
+## 2. Major Functional Requirements (Summary)
+- Role-based user registration and KYC document management.
+- Auction creation, bidding, and status tracking.
+- Product listing for direct sales.
+- Order management, cart, payments, and delivery tracking.
+- Notifications and audit logs.
+- Admin controls for user approvals and platform monitoring.
+
+***
+
+## 3. Identify Entities (Tables)
+
+| Entity               | Purpose                                      |
+|----------------------|----------------------------------------------|
+| Users                | All platform users (farmers, cottagers, buyers, admins) with roles |
+| UserProfiles         | Detailed profile info and KYC document records |
+| Auctions             | Auction events created by farmers             |
+| Bids                 | Individual bids on auctions                    |
+| Products             | Listed items for direct sale by cottagers     |
+| Orders               | Buyer orders for products or auction wins     |
+| OrderItems           | Details of products within an order             |
+| Notifications        | Push/Email alerts for users                    |
+| Contracts            | Agreements for auction wins                    |
+| Roles                | Definitions of user roles                       |
+| Categories           | Product and produce categories                  |
+| AuditLogs            | Record of critical actions for security/audit |
+| PaymentDetails       | Payment and transaction info                    |
+
+***
+
+## 4. Relationships Between Tables
+
+- **Users** 1–1 **UserProfiles**
+- **Users** 1–many **Auctions** (farmers create auctions)
+- **Auctions** 1–many **Bids**
+- **Users** 1–many **Bids** (bidders)
+- **Users** 1–many **Products** (cottagers list products)
+- **Users** 1–many **Orders** (buyers place orders)
+- **Orders** 1–many **OrderItems**
+- **OrderItems** many–1 **Products**
+- **Auctions** 1–1 **Contracts** (winning contract)
+- **Users** many–1 **Roles**
+- **Products** many–1 **Categories**
+- **Users** 1–many **Notifications**
+- All major tables reference user IDs for owner/actioner
+- AuditLogs reference users and actions timestamps
+
+***

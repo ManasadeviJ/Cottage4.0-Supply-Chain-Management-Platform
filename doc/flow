@@ -1,0 +1,108 @@
+Here is the user flow for the different roles in the Cottage 4.0 marketplace, illustrating their journeys from registration through core interactions on the platform:
+
+***
+
+# User Flows in Cottage 4.0 Marketplace
+
+***
+
+## 1. Farmer Flow
+
+1. **Registration & Onboarding**
+   - Fill multi-step registration form (personal info, KYC docs, land proof, bank details)
+   - OTP phone/email verification
+   - Submit documents for admin approval
+   - Receive approval notification  
+
+2. **Dashboard Access**
+   - View auction summary: upcoming, live, past
+   - Create new auction: enter produce details, reserve price, schedule
+   - Upload necessary documents anytime (KYC, land)
+
+3. **Auction Management**
+   - Track live bids real-time
+   - Respond to admin requests if needed
+   - View auction winners and contracts
+   - Download contracts, communicate with buyers
+
+4. **Post-Auction**
+   - Manage deliveries/payments offline or via platform
+   - View sales analytics and history
+   - Update product catalog for future auctions
+
+***
+
+## 2. Processing Cottager Flow
+
+1. **Registration & Onboarding**
+   - Register with business/shop details, KYC, GST (if applicable)
+   - Verify via OTP and admin approval
+   - Set product categories handled
+
+2. **Dashboard Access**
+   - Manage product listings for direct sale
+   - Add new items with images, descriptions, prices, and stock levels
+
+3. **Order Management**
+   - View incoming orders and statuses
+   - Confirm shipments, process returns and refunds
+   - Access sales reports and customer inquiries
+
+4. **Interaction**
+   - Engage with buyers through built-in communication
+   - Update inventory regularly
+
+***
+
+## 3. Finished Product Cottager Flow
+
+Similar to Processing Cottager but focused on finished goods:
+
+1. Registration with relevant business and KYC inputs
+2. Listing finished products for direct sale
+3. Managing orders, returns, and analytics
+4. Customer engagement and profile updates
+
+***
+
+## 4. Buyer Flow
+
+1. **Registration & Login**
+   - Sign-up with basic info; optional KYC for high-value auctions
+   - Verify email and phone
+
+2. **Marketplace Navigation**
+   - Use filters/search to find products and auctions
+   - Add auction items or fixed-price products to cart or wishlist
+
+3. **Auction Participation**
+   - Join live auctions
+   - Place bids or set proxy bids
+   - Receive live notifications of bidding status
+
+4. **Checkout & Order Tracking**
+   - Complete purchase via selected payment method
+   - Track order status and request returns/refunds if necessary
+   - Rate & review sellers and products
+
+***
+
+## 5. Admin Flow
+
+1. **Login & Dashboard**
+   - Access user management and system metrics dashboards
+
+2. **User & KYC Management**
+   - Review and approve/reject farmer and cottager registrations and documents
+
+3. **Auction & Order Monitoring**
+   - Oversee ongoing auctions, resolve disputes, and manage contracts
+   - Manage orders, returns, and platform disputes
+
+4. **Reporting & Settings**
+   - Generate reports on platform usage and sales
+   - Configure user roles, notification settings, and other system parameters
+
+***
+
+These flows ensure seamless onboarding, interaction, and management for each role, maintaining platform integrity and user satisfaction while optimizing marketplace efficiency.

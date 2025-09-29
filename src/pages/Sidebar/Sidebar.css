@@ -1,0 +1,217 @@
+/* --- Global Styles & Variables (Assume these are available) --- */
+:root {
+  --primary-color: #d94f4f; /* Accent red */
+  --secondary-color: #333; /* Dark text */
+  --light-gray-text: #666; /* Light gray text for inactive links */
+  --border-color: #e0e0e0; 
+  --bg-light: #f9f9f9;
+  --white: #fff;
+}
+
+/* --- Profile Page Layout --- */
+.profile-page-wrapper {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 40px; /* Reduced gap */
+}
+
+/* --- Sidebar Styling (Menu and Indentation) --- */
+.sidebar {
+  flex: 0 0 240px; 
+  padding-right: 20px; /* Reduced padding */
+  border-right: 1px solid var(--border-color); 
+}
+
+.menu-group {
+  margin-bottom: 15px; /* Reduced spacing between menu groups */
+}
+
+.menu-header {
+  font-family: inherit;
+  font-size: 1.0rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin: 0 0 8px 0; /* Reduced margin below header */
+  padding: 0;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  padding: 3px 0; /* Tightened vertical padding */
+  text-align: left;
+  background: none; 
+  border: none;
+  font-family: inherit;
+  color: var(--light-gray-text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.1s;
+  font-weight: 500;
+  line-height: 1.5; /* Good line height for tight lists */
+  padding-left: 15px; /* FIX: Indent all menu items, including the first one */
+}
+
+.sidebar button:hover {
+  color: var(--secondary-color);
+}
+
+.sidebar button.active {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* --- Content Area & Profile Header (New Requirement) --- */
+.content-area {
+  flex-grow: 1;
+  padding: 0; /* Removed extra padding */
+}
+
+.profile-summary-header {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.profile-image-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px; /* Use square corners like the example image */
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.profile-details {
+  flex-grow: 1;
+}
+
+.profile-details h2 {
+  font-size: 1.8rem;
+  margin: 0 0 5px 0;
+  color: var(--secondary-color);
+}
+
+.profile-details p {
+  margin: 0 0 5px 0;
+  font-size: 0.95rem;
+  color: var(--light-gray-text);
+}
+
+.profile-details .meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.profile-details .meta span {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.share-btn-top {
+  padding: 6px 15px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* --- Form Specifics --- */
+.content-area h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-top: 0; 
+  margin-bottom: 20px; 
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Reduced gap */
+}
+
+.form-field {
+  flex: 1 1 calc(50% - 10px); /* Two columns layout */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field.full-width {
+  flex: 1 1 100%;
+}
+
+.form-field label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+/* --- Form Actions/Buttons Fix --- */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Reduced gap */
+  padding-top: 20px;
+}
+
+.form-actions button {
+  padding: 8px 15px; /* Tighter padding */
+  font-size: 0.9rem; 
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 150px; /* FIX: Equal width for buttons */
+  box-sizing: border-box;
+}
+
+.save-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: 1px solid var(--primary-color);
+}
+
+.cancel-button {
+  background-color: var(--white);
+  color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+}
+
+/* --- Mobile Responsiveness (9 variants not possible, but responsive layout is) --- */
+@media (max-width: 992px) {
+  .profile-page-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  .sidebar {
+    flex: 0 0 auto;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 0;
+  }
+  .form-field {
+    flex: 1 1 100%; /* Single column on smaller screens */
+  }
+}

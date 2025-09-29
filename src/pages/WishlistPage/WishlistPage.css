@@ -1,0 +1,243 @@
+/* --- Wishlist.css / WishlistPage.css --- */
+
+/* --- 1. Base Layout & Desktop (5 Cards per Row) --- */
+.wishlist-page-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.product-grid {
+    display: grid;
+    /* Default: 5 cards per row on large screens */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px;
+    padding-top: 20px;
+}
+
+/* Card Wrapper Styles (Universal) */
+.wishlist-card-wrapper {
+    position: relative;
+    border: 1px solid #e0e0e0;
+    border-radius: 0; /* Sharp Edges */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure internal cards have sharp edges/no border */
+.auction-card, .buy-card {
+    border-radius: 0 !important; 
+    border: none !important;
+}
+
+/* --- 2. Tab Navigation & Sliding Underline (FIXED HALF-WIDTH) --- */
+
+.wishlist-tabs-container {
+    position: relative; 
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    width: 100%; 
+}
+
+.wishlist-tabs {
+    /* Ensure the tabs span the full width and are spaced to align with the 50% line */
+    display: flex;
+    justify-content: space-around; 
+    width: 100%;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    /* Force buttons to take up exactly half the space */
+    width: 50%; 
+    text-align: center;
+}
+
+.tab-button.active {
+    color: #000;
+}
+
+/* The Sliding Line Element - Width and Transform are calculated in JS */
+.tab-underline {
+    position: absolute;
+    bottom: -1px;
+    height: 3px;
+    background-color: #d94f4f; /* Theme Color */
+    transition: transform 0.3s ease; 
+    left: 0;
+}
+
+
+/* --- 3. Remove Button (Top Right - Cross Icon) --- */
+
+.wishlist-remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px; 
+    background-color: rgba(255, 255, 255, 0.8); /* Light grey/white based background */
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    color: #888; /* Darker grey cross */
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 15;
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.wishlist-remove-btn:hover {
+    color: #d94f4f; /* Theme color on hover */
+    border-color: #d94f4f;
+    background-color: #fff;
+}
+
+/* --- 4. Auction Indicator (Top Left) --- */
+.wishlist-auction-indicator {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 3px 6px;
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    z-index: 10;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+}
+
+.wishlist-auction-indicator svg {
+    margin-right: 3px;
+}
+
+
+/* --- 5. Action Button (Theme Color, No Border) --- */
+
+.wishlist-action-btn-container {
+    padding: 0 10px 10px; 
+}
+
+.wishlist-action-btn {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #d94f4f; /* Theme Color Background */
+    color: white; /* White Text */
+    border: none; /* No Border */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: none; /* Hidden by default on desktop */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 0;
+}
+
+/* --- 6. Desktop Hover Logic (>= 1025px) --- */
+@media (min-width: 1025px) {
+    .wishlist-card-wrapper:hover .wishlist-action-btn-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        padding: 0;
+    }
+    
+    .wishlist-card-wrapper:hover .wishlist-action-btn {
+        display: flex; 
+        width: 100%;
+        padding: 15px 0;
+        background-color: #d94f4f; 
+        border: none;
+        box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* ------------------------------------------------ */
+/* --- 7. TABLET (3 Cards per Row) --- */
+/* ------------------------------------------------ */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .product-grid {
+        /* 3 cards per row */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 15px;
+    }
+
+    /* Ensure button is ALWAYS visible on tablets (no hover) */
+    .wishlist-action-btn {
+        display: flex;
+    }
+    /* Reset hover-specific absolute positioning */
+    .wishlist-card-wrapper:hover .wishlist-action-btn-container {
+        position: relative; 
+        padding: 10px;
+    }
+    .wishlist-card-wrapper:hover .wishlist-action-btn {
+        box-shadow: none !important;
+        padding: 12px 0;
+    }
+}
+
+/* ------------------------------------------------ */
+/* --- 8. MOBILE (2 Cards per Row & Font Reduction) --- */
+/* ------------------------------------------------ */
+@media (max-width: 767px) {
+    .product-grid {
+        /* 2 cards per row */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Font size reductions for card content on mobiles */
+    .auction-card .auction-title,
+    .buy-card .buy-card-title {
+        font-size: 0.85rem; 
+        margin-bottom: 5px;
+        line-height: 1.2;
+    }
+    
+    .auction-card .auction-current-bid,
+    .buy-card .buy-card-price {
+        font-size: 0.9rem; 
+    }
+
+    /* Smallest text: Original price, discount */
+    .auction-card .auction-original-price {
+        font-size: 0.7rem;
+    }
+    
+    .buy-card-rating {
+        font-size: 0.75rem;
+    }
+
+    /* Adjust button padding/size for smaller screens */
+    .wishlist-action-btn {
+        display: flex;
+        font-size: 0.8rem;
+        padding: 8px 0; 
+    }
+    
+    .wishlist-action-btn-container {
+        padding: 5px 5px 5px;
+    }
+    
+    .tab-button {
+        font-size: 14px;
+    }
+    
+    .wishlist-remove-btn {
+        padding: 5px;
+        font-size: 14px;
+    }
+}

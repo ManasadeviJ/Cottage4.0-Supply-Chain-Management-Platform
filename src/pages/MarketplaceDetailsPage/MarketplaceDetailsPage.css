@@ -1,0 +1,307 @@
+/* ------------------------------------------------ */
+/* Marketplace Details Page Styling - Unified with Auction Page Image Template */
+/* ------------------------------------------------ */
+
+/* General Page Styling */
+.marketplace-details-page {
+  background-color: #f8f8f8;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* --- Product Purchase Section (Main Layout) --- */
+.product-purchase-section {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 30px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Image Gallery Container (Left Side) --- */
+.product-images {
+  width: 45%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.product-image-container {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+}
+
+.product-details-img {
+  width: 100%;
+  height: 380px;
+  display: block;
+  object-fit: cover;
+  transition: opacity 0.5s;
+  border-radius: 10px;
+}
+
+/* --- Thumbnail Gallery (Below Main Image) --- */
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s, opacity 0.2s;
+  opacity: 0.8;
+}
+
+.thumbnail:hover {
+  border: 2px solid #d94f4f;
+}
+
+.thumbnail.active {
+  border: 2px solid #d94f4f;
+  opacity: 1;
+}
+
+/* --- Product Details Block (Right Side) --- */
+.product-details {
+  width: 55%;
+  padding-left: 20px;
+}
+
+.product-details h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.producer-name {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+/* Price Information */
+.price-row {
+  margin-bottom: 2px;
+}
+
+.current-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d94f4f;
+  margin: 16px 0px;
+}
+
+/* Rating and Stock */
+.rating-and-actions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  gap: 15px;
+}
+
+.stock-indicator {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7f8c8d;
+}
+
+.rating-stars {
+  color: gold;
+  font-size: 1.1rem;
+}
+
+.review-count {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.product-description {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* --- Purchase Box (Quantity & Cart) --- */
+.purchase-box {
+  background-color: #fff5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.purchase-box p {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.quantity-input-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  height: 40px;
+}
+
+.quantity-input input {
+  width: 60px;
+  padding: 5px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  height: 100%;
+}
+
+.quantity-input button {
+  background: none;
+  border: none;
+  padding: 0 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #d94f4f;
+  height: 100%;
+}
+
+.add-to-cart-button,
+.buy-now-button {
+  background-color: #d94f4f;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  height: 40px;
+}
+
+.add-to-cart-button:hover,
+.buy-now-button:hover {
+  background-color: #b73737;
+}
+
+/* --- Product Grid for Related Items --- */
+.product-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.producer-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: #d94f4f;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.producer-link:hover {
+  color: #b93f3f;
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------ */
+/* Responsive Adjustments */
+/* ------------------------------------------------ */
+@media (max-width: 900px) {
+  .product-purchase-section {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .product-images,
+  .product-details {
+    width: 100%;
+    max-width: none;
+  }
+
+  .product-details-img {
+    height: 300px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .marketplace-details-page {
+    padding: 10px;
+  }
+
+  .product-details h2 {
+    font-size: 1.8rem;
+  }
+
+  .quantity-input-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-to-cart-button,
+  .buy-now-button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .thumbnail {
+    width: 55px;
+    height: 55px;
+  }
+
+  .product-details-img {
+    height: 250px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rating-and-actions {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
