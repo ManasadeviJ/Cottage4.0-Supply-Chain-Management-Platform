@@ -1,0 +1,84 @@
+/* --- InventoryCard.css --- */
+.product-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image-container {
+    width: 100%;
+    height: 160px; /* Smaller for inventory view */
+}
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+    flex-grow: 1; /* Pushes action buttons to bottom */
+}
+.product-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+.product-meta {
+    font-size: 0.85rem;
+    margin: 3px 0;
+    color: var(--light-gray-text);
+}
+.product-status {
+    margin-top: 10px;
+    /* Styles inherited from ProfilePage.css for status tags */
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-top: 1px solid var(--border-color);
+    gap: 10px;
+}
+.product-actions button {
+    flex-grow: 1;
+    padding: 8px 0;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+.edit-btn { 
+    background: var(--white); 
+    color: #007bff; 
+    border-color: #007bff; 
+}
+.delete-btn { 
+    background: var(--white); 
+    color: #dc3545; 
+    border-color: #dc3545; 
+}
+.auction-btn { 
+    background: var(--primary-color); 
+    color: var(--white); 
+    border-color: var(--primary-color); 
+}
+
+/* Responsive adjustments for inventory grid (used in ProductInventory.jsx) */
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+@media (min-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}

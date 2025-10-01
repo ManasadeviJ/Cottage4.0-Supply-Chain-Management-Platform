@@ -66,7 +66,7 @@ export default function Header({ user }) {
             <ShoppingCart size={24} className="icon" />
           </Link>
           
-          <Link to={isAuthenticated ? "/profile" : "/login"} className="icon-link profile-link">
+          <Link to="/profile" className="icon-link profile-link">
             <User size={24} className="icon" />
           </Link>
         </div>

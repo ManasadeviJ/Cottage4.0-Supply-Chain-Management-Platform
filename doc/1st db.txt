@@ -64,3 +64,16 @@ The DB must support real-time bidding, user management, KYC, contracts, orders, 
 - AuditLogs reference users and actions timestamps
 
 ***
+
+
+Profile Page UI & Functionality
+23,503 tokens
+
+User
+e5b51a4f-c29b-4ce5-888e-7e8612525d7b.jpg
+=when the profile is open i want the
+.profile-summary-header this to be shown above then the other profile detials.
+.top-action-buttons - this needs to be in the 2 * 2 matrix
+remove the wishlist noo need of them
+the ui should exactly should look like this image.
+for now there are back navigation 1st click of back nav goes white then goes to main 1st page.
