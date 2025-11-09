@@ -1,58 +1,70 @@
+// import mongoose from "mongoose";
+// import bcrypt from "bcryptjs";
+
+// const userSchema = new mongoose.Schema(
+//   {
+//     name: { type: String, required: true },
+//     email: { type: String, required: true, unique: true, index: true },
+//     password: { type: String, required: true },
+//     role: {
+//       type: String,
+//       enum: ["farmer", "buyer", "cottager", "logistics", "admin"], // ✅ added cottager
+//       required: true,
+//     },
+//     location: { type: String },
+//     isProfileComplete: { type: Boolean, default: false },
+//   },
+//   { timestamps: true }
+// );
+
+// // Encrypt password before save
+// userSchema.pre("save", async function (next) {
+//   if (!this.isModified("password")) return next();
+//   const salt = await bcrypt.genSalt(10);
+//   this.password = await bcrypt.hash(this.password, salt);
+//   next();
+// });
+
+// // Compare passwords
+// userSchema.methods.matchPassword = async function (enteredPassword) {
+//   return await bcrypt.compare(enteredPassword, this.password);
+// };
+
+// const User = mongoose.model("User", userSchema);
+// export default User;
+
+
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
 
 const userSchema = new mongoose.Schema(
   {
-    firstName: String,
-    lastName: String,
-    email: { type: String, unique: true, required: true },
-    passwordHash: { type: String, required: true },
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true, index: true },
+    password: { type: String, required: true },
     role: {
       type: String,
-      enum: ["Buyer", "Farmer", "Cottager", "Admin"],
-      default: "Buyer",
+      enum: ["farmer", "buyer", "cottager", "logistics", "admin"],
+      required: true,
     },
-    phone: String,
-    gender: String,
-    profilePhotoURL: String,
-    dateOfBirth: Date,
-    isActive: { type: Boolean, default: true },
-
-    buyerInfo: {
-      companyName: String,
-      companyDescription: String,
-      totalOrders: Number,
-      totalReturns: Number,
-    },
-
-    farmerInfo: {
-      farmName: String,
-      farmDescription: String,
-      totalListedProducts: Number,
-      certifications: [String],
-      landProofDocumentURL: String,
-    },
-
-    cottagerInfo: {
-      businessName: String,
-      productCategory: String,
-      totalProducts: Number,
-      businessProofDocumentURL: String,
-    },
-
-    businessDetails: {
-      companyName: String,
-      registrationNumber: String,
-      gstNumber: String,
-      documents: [
-        {
-          type: { type: String },
-          url: String,
-          verified: { type: Boolean, default: false },
-        },
-      ],
-    },
+    location: { type: String },
+    isProfileComplete: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("User", userSchema);
+// ✅ Automatically hash password before saving
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
+});
+
+// ✅ Method to compare entered vs. stored password
+userSchema.methods.matchPassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+
+const User = mongoose.model("User", userSchema);
+export default User;
